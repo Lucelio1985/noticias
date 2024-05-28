@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+}
+
+footer {
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+#loginButton {
+    background-color: rgb(55, 55, 58);
+    color: white;
+}
+
+h2 {
+    color: black;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+}
+
+.news-item {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.news-item h3 {
+    margin-top: 0;
+    color: black;
+}
+
+.editable-content {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+}
+
+.banner {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+    height: auto;
+    text-align: center;
+}
+
+#globalEditButton, #globalSaveButton {
+    display: none;
+}
+
+.logged-in #globalEditButton, .logged-in #globalSaveButton {
+    display: inline-block;
+}
+
+.news-img, .banner img, .editable-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+.logged-in .editable-content, .logged-in .banner {
+    border: 1px dashed #ccc;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content, .banner-section {
+    flex: 1 1 50%;
+    max-width: 50%;
+}
+
+.banner-container .banner {
+    margin-bottom: 10px;
+    border: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Hide the banner controls by default */
+.choose-file-btn, .save-banner-btn {
+    display: none;
+}
+
+.logged-in .choose-file-btn, .logged-in .save-banner-btn {
+    display: inline-block;
+}
+
+/* Media Queries for responsive design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 100%;
+    }
+    .content, .banner-section {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    .news-item, .editable-content, .banner, .content, .banner-section {
+        width: 100%;
+    }
+}
